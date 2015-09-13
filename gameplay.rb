@@ -55,6 +55,7 @@ def collect_move
 end
 
 def verify_players_move(move)
+  if !["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"].include?(move)
     puts "Invlaid entry. Try again."
     collect_move
   elsif @moves_that_are_taken.include?(move)
