@@ -1,7 +1,7 @@
 #Variables to keep track of durring game play
-@gameboard = { "a1" => " ", "a2" => " ", "a3" => " ", "b1" => " ", "b2" => " ", "b3" => " ", "c1" => " ", "c2" => " ", "c3" => " "}
+@gameboard = { "a1" => " ", "a2" => " ", "a3" => " ", "b1" => " ", "b2" => " ", "b3" => " ", "c1" => " ", "c2" => " ", "c3" => " " }
 @play_counter = 0
-
+@moves_that_are_taken = []
 #BEFORE GAME STARTS
 def welcome_message
   puts "Welcome! Let's play Tic Tac Toe"
@@ -55,10 +55,13 @@ def collect_move
 end
 
 def verify_players_move(move)
-  if !["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"].include?(move)
     puts "Invlaid entry. Try again."
     collect_move
+  elsif @moves_that_are_taken.include?(move)
+    puts "Invlaid entry. This move is already taken. Try again."
+    collect_move
   else
+    @moves_that_are_taken << move
     return move
   end
 end
