@@ -20,13 +20,6 @@ def start_game
 end
 
 #DURRING GAME PLAY
-def select_prompt_message(player_number)
-  player_number = player_number.to_s
-  prompt_array = ["Player #{player_number} you're up!", "Your move Player #{player_number}", "Player #{player_number}, it's your turn", "Alright Player #{player_number}, what's your move."]
-  message_type = rand(prompt_array.length) + 1
-  puts prompt_array[message_type - 1]
-end
-
 def post_game_board
   puts "                             "
   puts "        a     b     c        "
@@ -164,6 +157,7 @@ def end_game(player_number)
   exit
 end
 
+#Gameplay flow
 def run
   start_game
   prompt_player(1)
