@@ -4,7 +4,7 @@
 @moves_that_are_taken = []
 #BEFORE GAME STARTS
 def welcome_message
-  puts "Welcome! Let's play Tic Tac Toe"
+  puts "Welcome! Let's play Tic Tac Toe."
 end
 
 def post_game_instructions
